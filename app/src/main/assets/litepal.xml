@@ -11,7 +11,8 @@
     <list>
         <mapping class="com.example.schedulemanagerapp.diary.DiaryContent">
         </mapping>
-
+        <mapping class="com.example.schedulemanagerapp.schedule.ScheduleInfo" >
+        </mapping>
     </list>
 
 </litepal>

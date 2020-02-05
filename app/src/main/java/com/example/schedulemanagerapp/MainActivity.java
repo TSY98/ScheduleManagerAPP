@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.schedulemanagerapp.diary.ShowDiaryActivity;
+import com.example.schedulemanagerapp.schedule.AddScheduleActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ShowDiaryActivity.class);
                 startActivity(intent);
 
+            }
+        });
+
+        Button testAdd = findViewById(R.id.test_jump_toAdd);
+        testAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddScheduleActivity.class);
+                startActivity(intent);
             }
         });
     }
