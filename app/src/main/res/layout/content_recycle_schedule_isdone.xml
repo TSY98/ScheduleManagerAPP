@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -13,7 +12,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/show_sche_title"
+                android:id="@+id/show_sche_title_isdone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="今天论文截稿"
@@ -22,7 +21,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"/>
             <TextView
-                android:id="@+id/show_sche_date"
+                android:id="@+id/show_sche_date_isdone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2020年2月5号"
@@ -37,23 +36,13 @@
             android:layout_toRightOf="@+id/left"
             android:gravity="end">
             <TextView
-                android:id="@+id/show_sche_importance"
+                android:id="@+id/show_sche_importance_isdone"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="重要"
-                android:gravity="center"
+                android:gravity="end"
                 android:textSize="16sp"
-                android:layout_margin="10dp"/>
-            <Button
-                android:id="@+id/show_sche_done"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/ic_done_blue"/>
+                android:layout_margin="16dp"/>
         </LinearLayout>
     </RelativeLayout>
-
-
-
-
 </LinearLayout>
