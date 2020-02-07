@@ -2,9 +2,12 @@ package com.example.schedulemanagerapp.schedule;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,13 +29,20 @@ public class NoDoneFragment extends Fragment {
     private List<ScheduleInfo> scheduleInfoList = new ArrayList<>();
     private ScheduleMsgAdapter adapter;
     private FloatingActionButton add_fab;
+    private Button goDone;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.activity_show_schedule, container, false);
-        List<ScheduleInfo> scheduleInfos = DataSupport.findAll(ScheduleInfo.class);
+
+        //test();
+        List<ScheduleInfo> scheduleInfos = DataSupport.where("isDone=?", "0").find(ScheduleInfo.class);
         scheduleInfoList.addAll(scheduleInfos);
+
+
 
         showSchedule = view.findViewById(R.id.recycle_showSch);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
@@ -51,6 +61,31 @@ public class NoDoneFragment extends Fragment {
                 getActivity().finish();
             }
         });
+
+
+
         return view;
+    }
+
+    private void test() {
+//        ScheduleInfo scheduleInfo = new ScheduleInfo();
+//        scheduleInfo.setScheduleTitle("dfsa");
+//        scheduleInfo.setImportance(2);
+        ScheduleInfo scheduleInfo1 = new ScheduleInfo();
+        scheduleInfo1.setScheduleTitle("birthday");
+        scheduleInfo1.setImportance(3);
+        scheduleInfo1.setDate("2019年1月9号");
+        scheduleInfo1.setRemind(false);
+        scheduleInfo1.setDone(false);
+        scheduleInfo1.setRemark("oneus");
+        ScheduleInfo scheduleInfo2 = new ScheduleInfo();
+        scheduleInfo2.setScheduleTitle("meeting");
+        scheduleInfo2.setImportance(1);
+        scheduleInfo1.setDate("2019年3月19号");
+        scheduleInfo1.setRemind(false);
+        scheduleInfo1.setRemark("day");
+        scheduleInfo2.setDone(true);
+        scheduleInfo1.save();
+        scheduleInfo2.save();
     }
 }

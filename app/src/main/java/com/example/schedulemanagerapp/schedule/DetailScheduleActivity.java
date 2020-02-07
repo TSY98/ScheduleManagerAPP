@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.schedulemanagerapp.R;
 
-public class ShowScheduleIsDoneActivity extends AppCompatActivity {
+public class DetailScheduleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_schedule_is_done);
+        setContentView(R.layout.activity_detail_schedule);
     }
 }

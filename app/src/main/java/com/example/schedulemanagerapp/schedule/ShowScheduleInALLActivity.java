@@ -29,9 +29,8 @@ public class ShowScheduleInALLActivity extends AppCompatActivity implements View
         btn_isdone.setOnClickListener(this);
         btn_nodone.setOnClickListener(this);
 
-
-
-        initIsDoneFragement();
+        initNoDoneFragement();
+        btn_nodone.setActivated(true);
     }
 
 
@@ -40,9 +39,13 @@ public class ShowScheduleInALLActivity extends AppCompatActivity implements View
         switch (v.getId()) {
             case R.id.isDone_button:
                 initIsDoneFragement();
+                btn_nodone.setActivated(false);
+                btn_isdone.setActivated(true);
                 break;
             case R.id.noDone_button:
                 initNoDoneFragement();
+                btn_nodone.setActivated(true);
+                btn_isdone.setActivated(false);
                 break;
         }
 
@@ -53,12 +56,12 @@ public class ShowScheduleInALLActivity extends AppCompatActivity implements View
 
         if (noDoneFragment == null) {
             noDoneFragment = new NoDoneFragment();
-            fragmentTransaction.add(R.id.main_fragment, noDoneFragment);
+            //fragmentTransaction.add(R.id.main_fragment, noDoneFragment);
         }
-        //noDoneFragment = new NoDoneFragment();
-        //fragmentTransaction.replace(R.id.main_fragment, noDoneFragment);
-        hideFragement(fragmentTransaction);
-        fragmentTransaction.show(noDoneFragment);
+        noDoneFragment = new NoDoneFragment();
+        fragmentTransaction.replace(R.id.main_fragment, noDoneFragment);
+        //hideFragement(fragmentTransaction);
+        //fragmentTransaction.show(noDoneFragment);
         fragmentTransaction.commit();
     }
     private void initIsDoneFragement() {
@@ -66,12 +69,12 @@ public class ShowScheduleInALLActivity extends AppCompatActivity implements View
 
         if (isDoneFragment == null) {
             isDoneFragment = new IsDoneFragment();
-            fragmentTransaction.add((R.id.main_fragment), isDoneFragment);
+            //fragmentTransaction.add((R.id.main_fragment), isDoneFragment);
         }
-        hideFragement(fragmentTransaction);
-        //isDoneFragment = new IsDoneFragment();
-        //fragmentTransaction.replace(R.id.main_fragment, isDoneFragment);
-        fragmentTransaction.show(isDoneFragment);
+        //hideFragement(fragmentTransaction);
+        isDoneFragment = new IsDoneFragment();
+        fragmentTransaction.replace(R.id.main_fragment, isDoneFragment);
+        //fragmentTransaction.show(isDoneFragment);
         fragmentTransaction.commit();
     }
     private void hideFragement(FragmentTransaction transaction){

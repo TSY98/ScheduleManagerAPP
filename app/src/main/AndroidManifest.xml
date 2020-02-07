@@ -10,9 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".schedule.ShowScheduleIsDoneActivity"></activity>
+        <activity android:name=".schedule.DetailScheduleActivity"></activity>
         <activity android:name=".schedule.ShowScheduleInALLActivity" />
-        <activity android:name=".schedule.ShowScheduleActivity" />
         <activity android:name=".schedule.AddScheduleActivity" />
         <activity android:name=".diary.EditDiaryActivity" />
         <activity android:name=".diary.WriteDairyActivity" />

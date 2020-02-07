@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import com.example.schedulemanagerapp.diary.ShowDiaryActivity;
 import com.example.schedulemanagerapp.schedule.AddScheduleActivity;
-import com.example.schedulemanagerapp.schedule.ShowScheduleActivity;
 import com.example.schedulemanagerapp.schedule.ShowScheduleInALLActivity;
 
 public class MainActivity extends AppCompatActivity {

@@ -82,7 +82,10 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View v) {
                 int flag=1;
-                scheduleInfo.setId(System.currentTimeMillis());
+                SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+                final Date date1 = new Date(System.currentTimeMillis());
+                String dateFormat1 = formatter1.format(date1);
+                scheduleInfo.setMark(dateFormat1);
                 if (!title.getText().toString().isEmpty()) {
                     scheduleInfo.setScheduleTitle(title.getText().toString());
                 } else {
@@ -99,8 +102,9 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
                 if(flag==1){
                     scheduleInfo.save();
                     //跳转到显示界面
-                    Intent intent = new Intent(AddScheduleActivity.this, ShowScheduleActivity.class);
+                    Intent intent = new Intent(AddScheduleActivity.this, ShowScheduleInALLActivity.class);
                     startActivity(intent);
+                    Toast.makeText(AddScheduleActivity.this, "成功插入", Toast.LENGTH_LONG).show();
                     finish();
                 }
 

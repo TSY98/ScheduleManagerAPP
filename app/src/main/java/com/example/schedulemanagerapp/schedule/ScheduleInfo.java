@@ -5,7 +5,7 @@ import org.litepal.crud.DataSupport;
 import java.io.Serializable;
 
 public class ScheduleInfo extends DataSupport implements Serializable {
-    private long id;
+    private String mark;
 
     //设置等级
     //1-important
@@ -34,12 +34,12 @@ public class ScheduleInfo extends DataSupport implements Serializable {
 
     }
 
-    public long getId() {
-        return id;
+    public String getMark() {
+        return mark;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setMark(String mark) {
+        this.mark = mark;
     }
 
     public int getImportance() {
